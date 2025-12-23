@@ -1,11 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Folder } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
-const Section = ({ name }) => {
+const Section = ({ name,link }) => {
   return (
-    <motion.a
-      href={"#"}
+   <NavLink to={link}>
+    <motion.div
       whileHover={{ y: -6 }}
       transition={{ duration: 0.25, ease: "easeOut" }}
       className="
@@ -25,7 +26,8 @@ const Section = ({ name }) => {
       <span className="text-lg font-semibold tracking-wide text-[#00ADB5]">
         {name}
       </span>
-    </motion.a>
+    </motion.div>
+    </NavLink>
   );
 };
 

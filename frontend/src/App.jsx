@@ -1,15 +1,18 @@
-import React from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Mainpages from "./pages/Mainpages";
+import Notespage from "./pages/Notespage";
+import Pyqpage from "./pages/Pyqpages";
 
-import Subjectsection from './reuasblecomponents/sections/Subjectsection'
-const App = () => {
-  
+function App() {
   return (
-    <div>
-      <Subjectsection name="Subject 1" />
-      <Subjectsection name="Subject 2" />
-      <Subjectsection name="Subject 3" />
-    </div>
-  )
+   
+      <Routes>
+        <Route path="/" element={<Mainpages />} />
+        <Route path="/notes" element={<Notespage />} />
+        <Route path="/pyq" element={<Pyqpage />} />
+      </Routes>
+   
+  );
 }
 
-export default App
+export default App;

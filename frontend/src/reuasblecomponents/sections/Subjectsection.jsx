@@ -1,8 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { BookOpen } from "lucide-react";
-
-const Subjectsection = ({ name, link = "#" }) => {
+const Subjectsection = ({ name, link = "#" ,icon:Icon}) => {
   return (
     <motion.a
       href={link}
@@ -23,8 +21,8 @@ const Subjectsection = ({ name, link = "#" }) => {
         hover:bg-white/10
         cursor-pointer
       "
-    >
-      <BookOpen size={18} className="text-[#00ADB5] text-[#00ADB5]" />
+    > 
+      {Icon && <Icon size={18} className="text-[#00ADB5] text-[#00ADB5]" />}
       <span>{name}</span>
     </motion.a>
   );

@@ -2,8 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import Navbar from "../reuasblecomponents/navbar/Navbar";
 import Section from "../reuasblecomponents/sections/Section";
-import { NavLink } from "react-router-dom";
-import Notespage from "./Notespage"
+import Card from "../reuasblecomponents/card/Card";
+import Downloadbtn from "../reuasblecomponents/Buttons/Downloadbtn";
 const containerVariant = {
   hidden: { opacity: 0 },
   show: {
@@ -88,6 +88,7 @@ const Mainpages = () => {
           </motion.div>
         </motion.div>
       </motion.div>
+        <Card/>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 
-const Downloadbtn = ({ name, link }) => {
+export const Downloadbtn = ({ name, link }) => {
   return (
     <motion.a
       href={link}

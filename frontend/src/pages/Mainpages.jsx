@@ -88,7 +88,6 @@ const Mainpages = () => {
           </motion.div>
         </motion.div>
       </motion.div>
-        <Card/>
     </div>
   );
 };

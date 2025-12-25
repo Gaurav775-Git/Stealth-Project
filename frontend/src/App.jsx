@@ -25,6 +25,11 @@ import Pyq6page from "./pages/Pyqnotespages/Pyq6page";
 import Pyq7page from "./pages/Pyqnotespages/Pyq7page";
 import Pyq8page from "./pages/Pyqnotespages/Pyq8page";
 
+//                       subjects
+
+import Maths from "./pages/subjects/sem1/Maths";
+import Coa from "./pages/subjects/sem1/Coa";
+
 function App() {
   return (
    
@@ -32,6 +37,8 @@ function App() {
         <Route path="/" element={<Mainpages />} />
           <Route path="/notes" element={<Notespage />} />
              <Route path="/notes/sem1" element={<Sem1page />} />
+               <Route path="/notes/sem1/math" element={<Maths />} />
+               <Route path="/notes/sem1/coa" element={<Coa />} />
              <Route path="/notes/sem2" element={<Sem2page />} />
              <Route path="/notes/sem3" element={<Sem3page />} />
              <Route path="/notes/sem4" element={<Sem4page />} />

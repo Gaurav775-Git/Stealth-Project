@@ -1,4 +1,3 @@
-require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -7,8 +6,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var connectDB = require('./controllers/db');
-var authRoutes = require('./routes/authRoutes')
+var authRouter = require('./routes/auth')
+var connect = require('./config/connect');
 
 var app = express();
 
@@ -24,9 +23,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/api/auth',authRoutes);
+app.use('/',authRouter);
 
-connectDB();
+connect();
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

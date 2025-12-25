@@ -3,6 +3,7 @@ import Mainpages from "./pages/Mainpages";
 import Notespage from "./pages/Notespage";
 import Pyqpage from "./pages/Pyqpages";
 import Signup from "./pages/Signup";
+import Signin from "./pages/Signin"
                    // semester pages
 
 import Sem1page from "./pages/semnotespages/Sem1page";
@@ -31,6 +32,7 @@ function App() {
       <Routes>
           <Route path="/" element={<Mainpages />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/signin" element={<Signin />} />
           <Route path="/notes" element={<Notespage />} />
              <Route path="/notes/sem1" element={<Sem1page />} />
              <Route path="/notes/sem2" element={<Sem2page />} />

@@ -31,7 +31,11 @@ const Signin = () => {
 
     try {
       const res = await API.post("/api/login", { email, password });
-      setMessage(res.data.message);
+      setMessage("Login successful. Redirecting...");
+      setTimeout(() => {
+        navigate("/");
+      }, 1000);
+
     } catch (err) {
       console.error(err);
       setError("Invalid email or password");

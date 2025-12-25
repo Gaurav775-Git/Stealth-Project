@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Downloadbtn}  from "../Buttons/Downloadbtn";
 
-const Card = ({ image, chaptername, unitnumber, subjectcode }) => {
+const Card = ({ image, chaptername, unitnumber, subjectcode, link }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -62,7 +62,11 @@ const Card = ({ image, chaptername, unitnumber, subjectcode }) => {
 
         {/* Button */}
         <div className="mt-3">
-          <Downloadbtn name="Download"  />
+          <a href={`http://localhost:5000${link}`}
+             target="_blank"
+             rel="noopener noreferrer">
+             <Downloadbtn name="Download"  />
+          </a>
         </div>
       </div>
     </motion.div>

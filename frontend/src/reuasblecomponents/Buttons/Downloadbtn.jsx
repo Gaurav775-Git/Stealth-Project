@@ -2,9 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 
-export const Downloadbtn = ({ name, link }) => {
+export const Downloadbtn = ({ name, link}) => {
   return (
-    <motion.a
+    
+    <motion.div
       href={link}
       download
       whileHover={{ scale: 1.05 }}
@@ -23,7 +24,8 @@ export const Downloadbtn = ({ name, link }) => {
     >
       <Download size={18} />
       <span>{name}</span>
-    </motion.a>
+    </motion.div>
+    
   );
 };
 

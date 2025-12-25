@@ -1,9 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 const Subjectsection = ({ name, link = "#" ,icon:Icon}) => {
   return (
-    <motion.a
-      href={link}
+    <NavLink to={link}>
+    <motion.div
       whileHover={{ x: 6 }}
       whileTap={{ scale: 0.97 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
@@ -24,7 +25,8 @@ const Subjectsection = ({ name, link = "#" ,icon:Icon}) => {
     > 
       {Icon && <Icon size={18} className="text-[#00ADB5] text-[#00ADB5]" />}
       <span>{name}</span>
-    </motion.a>
+    </motion.div>
+    </NavLink>
   );
 };
 

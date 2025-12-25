@@ -1,41 +1,31 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express=require('express')
+const app=express()
+const cors=require('cors')
+const path=require('path')
+app.use(express.json())
+app.use(cors(
+  {
+    origin:'http://localhost:5173',
+    methods:['GET','POST','PUT','DELETE'],
+    credentials:true
+  }
+))
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+app.get('/:semester/:subject/:unit',(req,res)=>{
+  const {semester,subject,unit}=req.params
+  const  filepath=path.join(__dirname,"upload",semester,subject,`${unit}.pdf`)
+console.log(filepath)
+  res.download(filepath,`${semester}-${subject}-${unit}.pdf`,(err)=>{
+    if(err){
+      console.log("error",err)
+      res.status(404).send("file not found")
+    }
+    else{
+      console.log("file downloaded")
+    }
+  })
+})
 
-var app = express();
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
-
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
-
-module.exports = app;
+app.listen(5000,()=>{
+  console.log('server is running on port 5000')
+})

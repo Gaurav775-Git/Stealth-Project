@@ -37,7 +37,11 @@ const Signup = () => {
         college,
         semester: Number(semester),
       });
-      setMessage(res.data.message);
+      setMessage("Signup successful. Redirecting...");
+      setTimeout(() => {
+        navigate("/signin");
+      }, 1000);
+
       
     } catch (err) {
       setMessage(err.response?.data?.message || "Error occurred");

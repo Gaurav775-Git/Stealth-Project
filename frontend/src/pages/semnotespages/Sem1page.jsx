@@ -22,11 +22,11 @@ const containerVariant = {
 
 const Sem1page = () => {
   const subjects = [
-    { name: "Mathematics", icon: Sigma, link: "/notes/sem1/math" },
-    { name: "Computer Architecture", icon: Cpu, link: "/notes/sem1/coa" },
-    { name: "DBMS", icon: Database, link: "/notes/sem1/dbms" },
-    { name: "Networks", icon: Network, link: "/notes/sem1/cn" },
-    { name: "Discrete Maths", icon: Calculator, link: "/notes/sem1/dm" },
+    { name: "Matrices and Calculus", icon: Sigma, link: "/notes/sem1/math" },
+    { name: "Semiconductor Physics and devices", icon: Cpu, link: "/notes/sem1/physics" },
+    { name: "Programming in C", icon: Database, link: "/notes/sem1/cprogram" },
+    { name: "Problem Solving Approach", icon: Network, link: "/notes/sem1/psa" },
+    { name: "Fundamentals of Core Engineering", icon: Calculator, link: "/notes/sem1/fce" },
   ];
 
   return (

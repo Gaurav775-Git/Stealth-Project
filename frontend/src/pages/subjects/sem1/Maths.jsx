@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../../../reuasblecomponents/navbar/Navbar";
 import Card from "../../../reuasblecomponents/card/Card";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
+
 
 /* animation variants */
 const containerVariant = {
@@ -20,25 +20,12 @@ const itemVariant = {
 
 const Maths = () => {
   const subjectinfo = [
-    { image: "", chaptername: "Unknown", unitnumber: "1", subjectcode: "BCS-101" , link:"/sem1/math/unit1"},
-    { image: "", chaptername: "Unknown", unitnumber: "2", subjectcode: "BCS-101", link:"/sem1/math/unit2"},
-    { image: "", chaptername: "Unknown", unitnumber: "3", subjectcode: "BCS-101" , link:"/sem1/math/unit3"},
-    { image: "", chaptername: "Unknown", unitnumber: "4", subjectcode: "BCS-101" , link:"/sem1/math/unit4"},
-    { image: "", chaptername: "Unknown", unitnumber: "5", subjectcode: "BCS-101" , link:"/sem1/math/unit5"},
+    { image: "", chaptername: "Unknown", unitnumber: "1", subjectcode: "BS-103" , link:"/sem1/math/unit1"},
+    { image: "", chaptername: "Unknown", unitnumber: "2", subjectcode: "BS-103", link:"/sem1/math/unit2"},
+    { image: "", chaptername: "Unknown", unitnumber: "3", subjectcode: "BS-103" , link:"/sem1/math/unit3"},
+    { image: "", chaptername: "Unknown", unitnumber: "4", subjectcode: "BS-103" , link:"/sem1/math/unit4"},
+    { image: "", chaptername: "Unknown", unitnumber: "5", subjectcode: "BS-103" , link:"/sem1/math/unit5"},
   ];
-//   useEffect(()=>{
-//     const fetchbackend=async()=>{
-//         try{
-//             const  res=await fetch('http://localhost:5000/')
-//             console.log(res);
-
-//         } catch (error) {
-//             console.log(error);
-//         }
-//     }
-//     fetchbackend();
-//   },[])
-
 
   return (
     <div className="min-h-screen bg-white">
@@ -47,7 +34,7 @@ const Maths = () => {
       <div className="max-w-6xl mx-auto px-4 pt-12 pb-12">
     
         <h1 className="text-center text-3xl md:text-4xl font-bold text-[#1f2937] mb-10">
-          Mathematics <span className="text-[#00ADB5]">Units</span>
+          Matrices & calculus  <span className="text-[#00ADB5]">Units</span>
         </h1>
 
     

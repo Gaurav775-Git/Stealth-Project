@@ -17,8 +17,8 @@ const navItems = [
   { name: "Home", icon: Home, path: "/" },
   { name: "Notes", icon: Notebook, path: "/notes" },
   { name: "PYQ", icon: FileText, path: "/pyq" },
-  { name: "CT Paper", icon: ClipboardList },
-  { name: "Syllabus", icon: BookOpen },
+  { name: "CT Paper", icon: ClipboardList,path:"/ctpaper" },
+  { name: "Syllabus", icon: BookOpen ,path:"/syllabus"},
   { name: "Contact", icon: Mail },
   { name: "Sign Up", icon: LogIn, path: "/signup" },
 ];

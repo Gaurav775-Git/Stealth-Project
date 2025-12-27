@@ -47,10 +47,10 @@ const Signin = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="min-h-150 flex pt-20 justify-center bg-gray-100">
         <form
           onSubmit={handleSubmit}
-          className="bg-white p-6 rounded-lg shadow-md w-80"
+          className="bg-white p-6 rounded-lg shadow-md w-80 max-h-80"
         >
           <h2 className="text-2xl font-bold text-center mb-5">Sign In</h2>
 

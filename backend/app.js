@@ -10,6 +10,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth')
 var connect = require('./config/connect');
+var downloadpdf= require('./routes/download');
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use(cors({
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/',authRouter);
+ app.use('/download',downloadpdf)
 
 connect();
 
@@ -38,21 +40,6 @@ connect();
 app.use(function(req, res, next) {
   next(createError(404));
 });
- //download pdf
-app.get('/:semester/:subject/:unit',(req,res)=>{
-  const {semester,subject,unit}=req.params
-  const  filepath=path.join(__dirname,"upload",semester,subject,`${unit}.pdf`)
-console.log(filepath)
-  res.download(filepath,`${semester}-${subject}-${unit}.pdf`,(err)=>{
-    if(err){
-      console.log("error",err)
-      res.status(404).send("file not found")
-    }
-    else{
-      console.log("file downloaded")
-    }
-  })
-})
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development

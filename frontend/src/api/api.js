@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://notes-resolver.onrender.com",
   withCredentials: true, // if you want cookies later
 });
 

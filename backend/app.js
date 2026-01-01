@@ -25,9 +25,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: [
+    "http://localhost:5173",
+    "https://notes-resolver.vercel.app"
+  ],
   credentials: true
 }));
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

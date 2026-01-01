@@ -1,3 +1,4 @@
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -9,6 +10,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth')
 var connect = require('./config/connect');
+var downloadpdf= require('./routes/download');
 
 var app = express();
 
@@ -30,6 +32,7 @@ app.use(cors({
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/',authRouter);
+ app.use('/download',downloadpdf)
 
 connect();
 
@@ -37,7 +40,6 @@ connect();
 app.use(function(req, res, next) {
   next(createError(404));
 });
-
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development

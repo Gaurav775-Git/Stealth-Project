@@ -62,7 +62,7 @@ const Card = ({ image, chaptername, unitnumber, subjectcode, link }) => {
 
         {/* Button */}
         <div className="mt-3">
-          <a href={`http://localhost:5000${link}`}
+          <a href={`http://localhost:3000/download${link}`}
              target="_blank"
              rel="noopener noreferrer">
              <Downloadbtn name="Download"  />

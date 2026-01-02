@@ -1,8 +1,35 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Downloadbtn}  from "../Buttons/Downloadbtn";
+import Downloadbtn from "../Buttons/Downloadbtn";
 
-const Card = ({ image, chaptername, unitnumber, subjectcode, link }) => {
+const Card = ({
+  image,
+  chaptername,
+  unitnumber,
+  subjectcode,
+  publicId,   // 👈 ONLY thing needed for download
+}) => {
+
+  const handleDownload = async () => {
+    try {
+      const res = await fetch(
+        `https://notes-resolver.onrender.com/api/pdf/download/${publicId}`
+      );
+
+      const data = await res.json();
+
+      if (!data.success) {
+        alert("Download failed");
+        return;
+      }
+
+      window.open(data.downloadUrl, "_blank");
+
+    } catch (err) {
+      console.error("Download error:", err);
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -20,7 +47,7 @@ const Card = ({ image, chaptername, unitnumber, subjectcode, link }) => {
         p-4 my-3
       "
     >
-    
+      {/* Left icon/image */}
       <div
         className="
           h-20 w-20
@@ -43,7 +70,7 @@ const Card = ({ image, chaptername, unitnumber, subjectcode, link }) => {
         )}
       </div>
 
-      
+      {/* Right content */}
       <div className="flex flex-col justify-between flex-1">
         <div>
           <h3 className="text-lg font-semibold text-gray-800">
@@ -60,13 +87,12 @@ const Card = ({ image, chaptername, unitnumber, subjectcode, link }) => {
           </p>
         </div>
 
-        {/* Button */}
+        {/* ✅ CORRECT Button */}
         <div className="mt-3">
-          <a href={`https://notes-resolver.onrender.com${link}`}
-             target="_blank"
-             rel="noopener noreferrer">
-             <Downloadbtn name="Download"  />
-          </a>
+          <Downloadbtn
+            name="Download"
+            onClick={handleDownload}
+          />
         </div>
       </div>
     </motion.div>

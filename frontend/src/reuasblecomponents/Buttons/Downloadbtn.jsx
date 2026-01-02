@@ -1,9 +1,8 @@
-// Downloadbtn.js
 import React from "react";
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 
-export const Downloadbtn = ({ name, onClick }) => {
+const Downloadbtn = ({ name, onClick }) => {
   return (
     <motion.button
       onClick={onClick}
@@ -26,3 +25,5 @@ export const Downloadbtn = ({ name, onClick }) => {
     </motion.button>
   );
 };
+
+export default Downloadbtn; // ✅ default export

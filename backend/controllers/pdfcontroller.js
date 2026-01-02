@@ -1,26 +1,32 @@
-const cloudinary = require('cloudinary');
+const cloudinary = require("../config/cloudinary");
 
-exports.downloadPdf = async (req, res) => {
+exports.downloadPdf = (req, res) => {
   try {
     const { publicId } = req.params;
 
-    // Generate downloadable PDF URL
-    const pdfUrl = cloudinary.url(publicId, {
-      resource_type: "raw",
-      type: "upload",
-      secure: true,
-      flags: "attachment",
-    });
+    console.log("PUBLIC ID RECEIVED:", publicId);
+    console.log("CLOUD NAME:", process.env.CLOUDINARY_CLOUD_NAME);
 
-    return res.status(200).json({
+    const url = cloudinary.utils.private_download_url(
+      publicId,
+      "pdf",
+      {
+        resource_type: "raw",
+        expires_at: Math.floor(Date.now() / 1000) + 300,
+      }
+    );
+
+    res.json({
       success: true,
-      downloadUrl: pdfUrl,
+      downloadUrl: url,
     });
 
-  } catch (error) {
+  } catch (err) {
+    console.error("CLOUDINARY ERROR:", err);
     res.status(500).json({
       success: false,
       message: "PDF download failed",
+      error: err.message,
     });
   }
 };

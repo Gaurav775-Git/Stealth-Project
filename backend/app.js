@@ -11,6 +11,7 @@ var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth')
 var connect = require('./config/connect');
 var downloadpdf= require('./routes/download');
+var pdfRoutes = require('./routes/pdfRoute')
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use(cors({
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/',authRouter);
+app.use("/api/pdf", pdfRoutes);
  app.use('/download',downloadpdf)
 
 connect();

@@ -3,7 +3,6 @@ import Navbar from "../../../reuasblecomponents/navbar/Navbar";
 import Card from "../../../reuasblecomponents/card/Card";
 import { motion } from "framer-motion";
 
-
 /* animation variants */
 const containerVariant = {
   hidden: { opacity: 0 },
@@ -20,11 +19,41 @@ const itemVariant = {
 
 const Maths = () => {
   const subjectinfo = [
-    { image: "", chaptername: "Unknown", unitnumber: "1", subjectcode: "BS-103" , link:"/sem1/math/unit1"},
-    { image: "", chaptername: "Unknown", unitnumber: "2", subjectcode: "BS-103", link:"/sem1/math/unit2"},
-    { image: "", chaptername: "Unknown", unitnumber: "3", subjectcode: "BS-103" , link:"/sem1/math/unit3"},
-    { image: "", chaptername: "Unknown", unitnumber: "4", subjectcode: "BS-103" , link:"/sem1/math/unit4"},
-    { image: "", chaptername: "Unknown", unitnumber: "5", subjectcode: "BS-103" , link:"/sem1/math/unit5"},
+    {
+      image: "",
+      chaptername: "Matrices",
+      unitnumber: "1",
+      subjectcode: "BS-103",
+      publicId: "notes/math/unit1",
+    },
+    {
+      image: "",
+      chaptername: "Determinants",
+      unitnumber: "2",
+      subjectcode: "BS-103",
+      publicId: "notes/math/unit2",
+    },
+    {
+      image: "",
+      chaptername: "Differential Calculus",
+      unitnumber: "3",
+      subjectcode: "BS-103",
+      publicId: "notes/math/unit3",
+    },
+    {
+      image: "",
+      chaptername: "Integral Calculus",
+      unitnumber: "4",
+      subjectcode: "BS-103",
+      publicId: "notes/math/unit4",
+    },
+    {
+      image: "",
+      chaptername: "Vector Calculus",
+      unitnumber: "5",
+      subjectcode: "BS-103",
+      publicId: "notes/math/unit5",
+    },
   ];
 
   return (
@@ -32,12 +61,10 @@ const Maths = () => {
       <Navbar />
 
       <div className="max-w-6xl mx-auto px-4 pt-12 pb-12">
-    
         <h1 className="text-center text-3xl md:text-4xl font-bold text-[#1f2937] mb-10">
-          Matrices & calculus  <span className="text-[#00ADB5]">Units</span>
+          Matrices & Calculus <span className="text-[#00ADB5]">Units</span>
         </h1>
 
-    
         <motion.div
           variants={containerVariant}
           initial="hidden"
@@ -58,7 +85,7 @@ const Maths = () => {
                 chaptername={item.chaptername}
                 unitnumber={item.unitnumber}
                 subjectcode={item.subjectcode}
-                link={item.link}
+                publicId={item.publicId}
               />
             </motion.div>
           ))}

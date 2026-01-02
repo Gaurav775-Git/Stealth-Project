@@ -1,13 +1,12 @@
+// Downloadbtn.js
 import React from "react";
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 
-export const Downloadbtn = ({ name, link}) => {
+export const Downloadbtn = ({ name, onClick }) => {
   return (
-    
-    <motion.div
-      href={link}
-      download
+    <motion.button
+      onClick={onClick}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       transition={{ type: "spring", stiffness: 300 }}
@@ -24,9 +23,6 @@ export const Downloadbtn = ({ name, link}) => {
     >
       <Download size={18} />
       <span>{name}</span>
-    </motion.div>
-    
+    </motion.button>
   );
 };
-
-export default Downloadbtn;

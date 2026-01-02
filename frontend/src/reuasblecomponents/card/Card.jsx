@@ -7,9 +7,10 @@ const Card = ({
   chaptername,
   unitnumber,
   subjectcode,
-  publicId,   // 👈 ONLY thing needed for download
+  publicId, // 👈 Required for PDF download
 }) => {
 
+  // ✅ Download handler
   const handleDownload = async () => {
     try {
       const res = await fetch(
@@ -19,14 +20,16 @@ const Card = ({
       const data = await res.json();
 
       if (!data.success) {
-        alert("Download failed");
+        alert("Download failed. Please try again.");
         return;
       }
 
+      // Open the PDF in a new tab
       window.open(data.downloadUrl, "_blank");
 
     } catch (err) {
       console.error("Download error:", err);
+      alert("Something went wrong while downloading the PDF.");
     }
   };
 
@@ -47,7 +50,7 @@ const Card = ({
         p-4 my-3
       "
     >
-      {/* Left icon/image */}
+      {/* Left icon / image */}
       <div
         className="
           h-20 w-20
@@ -82,16 +85,15 @@ const Card = ({
           </p>
 
           <p className="text-sm text-gray-500">
-            Subject Code:{" "}
-            <span className="font-medium">{subjectcode}</span>
+            Subject Code: <span className="font-medium">{subjectcode}</span>
           </p>
         </div>
 
-        {/* ✅ CORRECT Button */}
+        {/* ✅ Download Button */}
         <div className="mt-3">
           <Downloadbtn
             name="Download"
-            onClick={handleDownload}
+            onClick={handleDownload} // Calls backend, gets signed URL, opens PDF
           />
         </div>
       </div>

@@ -20,11 +20,11 @@ const itemVariant = {
 
 const Psa = () => {
   const subjectinfo = [
-    { image: "", chaptername: "Unknown", unitnumber: "1", subjectcode: "CS-101" , link:"/sem1/psa/unit1"},
-    { image: "", chaptername: "Unknown", unitnumber: "2", subjectcode: "CS-101", link:"/sem1/psa/unit2"},
-    { image: "", chaptername: "Unknown", unitnumber: "3", subjectcode: "CS-101" , link:"/sem1/psa/unit3"},
-    { image: "", chaptername: "Unknown", unitnumber: "4", subjectcode: "CS-101" , link:"/sem1/psa/unit4"},
-    { image: "", chaptername: "Unknown", unitnumber: "5", subjectcode: "CS-101" , link:"/sem1/psa/unit5"},
+    { image: "", chaptername: "UNIT1", unitnumber: "1", subjectcode: "CS-102" , publicId: "notes/cprogramming/unit1"},
+    { image: "", chaptername: "UNIT2", unitnumber: "2", subjectcode: "CS-102", publicId: "notes/cprogramming/unit2"},
+    { image: "", chaptername: "UNIT3", unitnumber: "3", subjectcode: "CS-102" , publicId: "notes/cprogramming/unit3"},
+    { image: "", chaptername: "UNIT4", unitnumber: "4", subjectcode: "CS-102" , publicId: "notes/cprogramming/unit4"},
+    { image: "", chaptername: "UNIT5", unitnumber: "5", subjectcode: "CS-102" , publicId: "notes/cprogramming/unit5"},
   ];
 
   return (
@@ -58,7 +58,7 @@ const Psa = () => {
                 chaptername={item.chaptername}
                 unitnumber={item.unitnumber}
                 subjectcode={item.subjectcode}
-                link={item.link}
+                publicId={item.publicId}
               />
             </motion.div>
           ))}

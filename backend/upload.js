@@ -22,4 +22,8 @@ async function uploadPDF(filePath, publicId) {
 }
 
 // Example usage
-uploadPDF("/home/gaurav/Desktop/work/Notes-Project/backend/PYTHON U-1 ONE SHOT NOTES.pdf", "notes/math/unit1");
+uploadPDF("/home/gaurav/Desktop/work/Notes-Project/backend/Unit-1 Quantum Mechanics  (1).pdf", "notes/physics/unit1");
+uploadPDF("/home/gaurav/Desktop/work/Notes-Project/backend/Unit-2 Electromagnetic Theory  (1).pdf", "notes/physics/unit2");
+uploadPDF("/home/gaurav/Desktop/work/Notes-Project/backend/Unit-3- Interference .pdf", "notes/physics/unit3");
+uploadPDF("/home/gaurav/Desktop/work/Notes-Project/backend/Unit 4 - Fiber Optics and LASERS .pdf", "notes/physics/unit4");
+uploadPDF("/home/gaurav/Desktop/work/Notes-Project/backend/Unit-5 Superconductivity and Nanomaterials.pdf", "notes/physics/unit5");

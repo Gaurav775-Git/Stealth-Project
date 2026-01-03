@@ -20,11 +20,11 @@ const itemVariant = {
 
 const Physics = () => {
   const subjectinfo = [
-    { image: "", chaptername: "Unknown", unitnumber: "1", subjectcode: "BS-104" , link:"/sem1/physics/unit1"},
-    { image: "", chaptername: "Unknown", unitnumber: "2", subjectcode: "BS-104", link:"/sem1/physics/unit2"},
-    { image: "", chaptername: "Unknown", unitnumber: "3", subjectcode: "BS-104" , link:"/sem1/physics/unit3"},
-    { image: "", chaptername: "Unknown", unitnumber: "4", subjectcode: "BS-104" , link:"/sem1/physics/unit4"},
-    { image: "", chaptername: "Unknown", unitnumber: "5", subjectcode: "BS-104" , link:"/sem1/physics/unit5"},
+    { image: "", chaptername: "Quantum Mechanics", unitnumber: "1", subjectcode: "BS-104" , publicId: "notes/physics/unit1"},
+    { image: "", chaptername: "Electrimagnetic Therory", unitnumber: "2", subjectcode: "BS-104", publicId: "notes/physics/unit2"},
+    { image: "", chaptername: "Inference", unitnumber: "3", subjectcode: "BS-104" , publicId: "notes/physics/unit3"},
+    { image: "", chaptername: "Fiber Optics and Laser", unitnumber: "4", subjectcode: "BS-104" , publicId: "notes/physics/unit4"},
+    { image: "", chaptername: "Superconductivity and Nanomaterials", unitnumber: "5", subjectcode: "BS-104" , publicId: "notes/physics/unit5"},
   ];
 
   return (
@@ -58,7 +58,7 @@ const Physics = () => {
                 chaptername={item.chaptername}
                 unitnumber={item.unitnumber}
                 subjectcode={item.subjectcode}
-                link={item.link}
+                publicId={item.publicId}
               />
             </motion.div>
           ))}

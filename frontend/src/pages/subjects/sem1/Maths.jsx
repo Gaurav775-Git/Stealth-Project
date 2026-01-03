@@ -96,3 +96,4 @@ const Maths = () => {
 };
 
 export default Maths;
+

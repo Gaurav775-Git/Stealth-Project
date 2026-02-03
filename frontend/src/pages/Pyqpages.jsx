@@ -23,7 +23,7 @@ const headingVariant = {
 
 const Pyqpages = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white flex flex-col items-center">
       
       <Navbar />
 

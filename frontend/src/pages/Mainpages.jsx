@@ -47,6 +47,7 @@ const Mainpages = () => {
             bg-white/70
             backdrop-blur
             shadow-md
+            shadow-[#00ADB5]/20
           "
         >
           <p className="text-xl md:text-2xl font-semibold text-gray-800 leading-relaxed">

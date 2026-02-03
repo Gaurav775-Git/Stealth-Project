@@ -32,7 +32,7 @@ const Navbar = () => {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="w-full bg-[#222831] text-[#EEEEEE] shadow-md px-6 py-4 flex justify-between items-center relative"
+      className="mt-3 rounded-full w-[75vw] bg-[#222831] text-[#EEEEEE] shadow-md shadow-blue-400 px-6 py-4 flex justify-between items-center relative"
     >
       <h1 className="text-3xl md:text-4xl font-extrabold tracking-wide">
         <span className="text-[#00ADB5]">Notes</span> Resolver
